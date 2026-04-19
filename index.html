@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1"/>
-<title>War Room Financeiro - Posto Jardim Botanico</title>
+<title>Painel Pericial Financeiro - Posto Jardim Botânico</title>
 <script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
 <style>
 :root{
@@ -92,43 +92,43 @@ td.num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
 <main class="app">
   <section class="topbar">
     <div class="brand">
-      <div class="eyebrow">War Room Financeiro | Valuation | 2016-2023</div>
-      <h1>Posto Jardim Botanico Ltda.</h1>
-      <div class="lead">Painel executivo com leitura operacional, capital de giro, estrutura de passivos, fluxo de caixa e motor de valuation. Os graficos e indicadores respondem ao periodo e ao cenario selecionado.</div>
+      <div class="eyebrow">Painel pericial financeiro | Valuation | 2016-2023</div>
+      <h1>Posto Jardim Botânico Ltda.</h1>
+      <div class="lead">Painel executivo com leitura operacional, capital de giro, estrutura de passivos, fluxo de caixa e motor de valuation. Os gráficos e indicadores respondem ao período e ao cenário selecionado.</div>
       <div class="facts">
-        <span class="chip">CNPJ 05.032.967/0001-79</span><span class="chip">Inicio: 05/05/2002</span>
-        <span class="chip">Combustiveis, lubrificantes, conveniencia e troca de oleo</span><span class="chip">Arquivo autonomo</span>
+        <span class="chip">CNPJ 05.032.967/0001-79</span><span class="chip">Início: 05/05/2002</span>
+        <span class="chip">Combustíveis, lubrificantes, conveniência e troca de óleo</span><span class="chip">Arquivo autônomo</span>
       </div>
     </div>
-    <aside class="identity-card" aria-label="Identidade visual do escritorio responsavel pela pericia">
+    <aside class="identity-card" aria-label="Identidade visual do escritório responsável pela perícia">
       <div class="identity-media">
-        <img src="afr-identidade.jpg" alt="AFR - Solucoes tecnicas para decisoes estrategicas" width="1080" height="1350" decoding="async"/>
+        <img src="afr-identidade.jpg" alt="AFR - Soluções técnicas para decisões estratégicas" width="1080" height="1350" decoding="async"/>
       </div>
       <div class="identity-copy">
-        <small>Responsavel pela pericia</small>
+        <small>Responsável pela perícia</small>
         <strong>AFR</strong>
-        <span>Solucoes tecnicas para decisoes estrategicas.</span>
+        <span>Soluções técnicas para decisões estratégicas.</span>
       </div>
     </aside>
     <aside class="control-rack">
-      <div><div class="control-title">Mesa de comando</div><div class="hint">Altere periodo, foco e cenario. O painel recalcula KPIs, graficos, score e valuation.</div></div>
+      <div><div class="control-title">Mesa de comando</div><div class="hint">Altere período, foco e cenário. O painel recalcula KPIs, gráficos, score e valuation.</div></div>
       <div class="row">
-        <div class="field"><label>Inicio</label><select id="startYear"></select></div>
+        <div class="field"><label>Início</label><select id="startYear"></select></div>
         <div class="field"><label>Fim</label><select id="endYear"></select></div>
       </div>
       <div class="row">
         <div class="field"><label>Modo</label><select id="mode"><option value="executivo">Executivo</option><option value="risco">Risco</option><option value="valuation">Valuation</option></select></div>
-        <div class="field"><label>Cenario</label><select id="scenario"><option value="base">Base</option><option value="stress">Stress</option><option value="upside">Upside</option></select></div>
+        <div class="field"><label>Cenário</label><select id="scenario"><option value="base">Base</option><option value="stress">Estresse</option><option value="upside">Otimista</option></select></div>
       </div>
     </aside>
   </section>
 
   <nav class="tabbar">
-    <button class="tab active" data-tab="overview">Visao geral</button>
+    <button class="tab active" data-tab="overview">Visão geral</button>
     <button class="tab" data-tab="performance">Performance</button>
     <button class="tab" data-tab="capital">Capital de giro</button>
     <button class="tab" data-tab="valuation">Valuation</button>
-    <button class="tab" data-tab="data">Base historica</button>
+    <button class="tab" data-tab="data">Base histórica</button>
   </nav>
 
   <section class="grid metrics" id="kpis"></section>
@@ -137,15 +137,15 @@ td.num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
   <section id="overview" class="content active">
     <div class="grid cols-2">
       <div class="panel">
-        <div class="panel-head"><div><h2>Mapa executivo de resultado</h2><div class="hint">Receita, lucro bruto, lucro liquido e margem liquida no periodo selecionado.</div></div></div>
+        <div class="panel-head"><div><h2>Mapa executivo de resultado</h2><div class="hint">Receita, lucro bruto, lucro líquido e margem líquida no período selecionado.</div></div></div>
         <div id="chartExecutive" class="chart-xl"></div>
       </div>
       <div class="grid">
         <div class="panel score">
           <div class="gauge"><span id="scoreValue">--</span></div>
-          <div><h2>Score financeiro sintetico</h2><div class="hint" id="scoreText"></div><div id="scoreBars"></div></div>
+          <div><h2>Score financeiro sintético</h2><div class="hint" id="scoreText"></div><div id="scoreBars"></div></div>
         </div>
-        <div class="panel"><h2>Diagnostico dinamico</h2><div id="dynamicDiagnosis" class="callout"></div></div>
+        <div class="panel"><h2>Diagnóstico dinâmico</h2><div id="dynamicDiagnosis" class="callout"></div></div>
         <div class="panel"><h2>Ranking dos anos</h2><div style="max-height:240px;overflow:auto"><table id="rankTable"></table></div></div>
       </div>
     </div>
@@ -158,9 +158,9 @@ td.num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
       <div class="panel"><h2>Margens economicas</h2><div id="chartMargins" class="chart"></div></div>
     </div>
     <div class="grid cols-3" style="margin-top:14px">
-      <div class="panel"><h2>Crescimento YoY da receita</h2><div id="chartYoy" class="chart-sm"></div></div>
+      <div class="panel"><h2>Variação anual da receita</h2><div id="chartYoy" class="chart-sm"></div></div>
       <div class="panel"><h2>Lucro por R$ 100 de receita</h2><div id="chartProfit100" class="chart-sm"></div></div>
-      <div class="panel"><h2>Waterfall do resultado 2023</h2><div id="chartWaterfallResult" class="chart-sm"></div></div>
+      <div class="panel"><h2>Ponte do resultado</h2><div id="chartWaterfallResult" class="chart-sm"></div></div>
     </div>
   </section>
 
@@ -171,7 +171,7 @@ td.num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
     </div>
     <div class="grid cols-3" style="margin-top:14px">
       <div class="panel"><h2>Estrutura patrimonial</h2><div id="chartBalance" class="chart-sm"></div></div>
-      <div class="panel"><h2>Passivos 2023</h2><div id="chartPassivo" class="chart-sm"></div></div>
+      <div class="panel"><h2>Passivos do ano final</h2><div id="chartPassivo" class="chart-sm"></div></div>
       <div class="panel"><h2>Fluxo de caixa 2023</h2><div id="chartDfc" class="chart-sm"></div></div>
     </div>
   </section>
@@ -179,7 +179,7 @@ td.num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
   <section id="valuation" class="content">
     <div class="panel" style="margin-bottom:14px">
       <h2>Motor de FCD simplificado</h2>
-      <div class="hint">Premissas editaveis. O calculo usa receita base normalizada, margem EBIT, imposto, reinvestimento em capital de giro, CAPEX e perpetuidade.</div>
+      <div class="hint">Premissas editáveis. O cálculo usa receita base normalizada, margem EBIT, imposto, reinvestimento em capital de giro, CAPEX e perpetuidade.</div>
       <div class="sliders" style="margin-top:12px">
         <div class="slider-box"><label>Margem EBIT <output id="outEbit"></output></label><input id="ebitMargin" type="range" min="0.3" max="2.2" step="0.1"></div>
         <div class="slider-box"><label>Crescimento <output id="outGrowth"></output></label><input id="growth" type="range" min="-2" max="8" step="0.25"></div>
@@ -201,21 +201,21 @@ td.num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
 
   <section id="data" class="content">
     <div class="grid cols-2">
-      <div class="panel"><h2>Tabela historica consolidada</h2><div style="max-height:560px;overflow:auto"><table id="historyTable"></table></div></div>
+      <div class="panel"><h2>Tabela histórica consolidada</h2><div style="max-height:560px;overflow:auto"><table id="historyTable"></table></div></div>
       <div class="panel"><h2>Matriz de indicadores</h2><div id="chartMatrix" class="chart-xl"></div></div>
     </div>
   </section>
 
   <section class="signature" aria-label="Assinatura tecnica AFR">
     <img src="afr-identidade.jpg" alt="" width="1080" height="1350" loading="lazy" decoding="async"/>
-    <div><strong>AFR | Solucoes tecnicas para decisoes estrategicas</strong><span>Identidade visual do escritorio responsavel pela analise pericial e base de valuation.</span></div>
+    <div><strong>AFR | Soluções técnicas para decisões estratégicas</strong><span>Identidade visual do escritório responsável pela análise pericial e base de valuation.</span></div>
     <div class="seal">Painel pericial executivo</div>
   </section>
-  <div class="footer">Valores em R$ historicos. Este painel e uma base analitica para discussao gerencial, pericial e de pre-valuation; nao substitui diligencia contabil, fiscal, operacional e juridica.</div>
+  <div class="footer">Valores em R$ históricos. Este painel é uma base analítica para discussão gerencial, pericial e de pré-valuation; não substitui diligência contábil, fiscal, operacional e jurídica.</div>
 </main>
 
 <script>
-const payload={"years":[2016,2017,2018,2019,2020,2021,2022,2023],"data":{"receita_bruta":[10428999.43,12134265.21,11556816.19,9804745.84,8699702.13,11257267.09,10792316.24,18919859.21],"receita_liquida":[10355507.51,12064892.11,11491002.67,9791500.9,8685326.98,11238688.85,10774988.89,18896403.23],"cmv":[8553513.55,10065547.15,9684732.73,8715642.32,7865325.22,9999294.2,9813059.27,17515220.3],"lucro_bruto":[1801993.96,1999344.96,1806269.94,1075858.58,820001.76,1239394.65,961929.62,1381182.93],"despesas_operacionais":[1601328.14,1702359.8,1676721.73,1253385.34,774303.61,1136721.08,1119121.39,1216902],"resultado_operacional":[21617.64,99409.59,-6199.73,-241344.34,41297.01,108974.28,69065.99,196228.72],"lucro_liquido":[11910.21,75551.29,-16749.2,-244432.51,15912.12,76716.17,50973.73,163262.28],"ativo_total":[1473860,970241,1000131,2069651,927829,1520546,1177843,3197118],"ativo_circulante":[1339134,860504,916491,1455577,880303,1479309,1088498,1629490],"disponivel":[91644,104337,78119,343089,485271,772876,576094,490195],"clientes":[364042,279534,254169,592974,96886,430661,300964,690910],"estoques":[182731,223171,185528,244937,143944,130572,68453,48977],"passivo_circulante":[956688,571765,619102,835574,52151,759306,586544,1254530],"fornecedores_cp":[422867,515130,486992,647299,6656,72096,196103,837694],"passivo_nao_circulante":[195644,699,699,1097481,432411,247269,106550,1288160],"patrimonio_liquido":[321528,397079,380330,135898,442569,513272,484750,654427],"tributos_recuperar":[75611,88899,118190,151815,154202,145199,142986,146420],"obrig_tributarias":[2400,3520,7891,792,3353,2342,5791,11935],"obrig_trab_prev":[24489,27724,96276,159540,39256,176070,27586,39957],"outras_obrigacoes_cp":[25767,25391,27942,27942,2886,508799,357065,364945],"partes_relacionadas_pnc":[0,0,0,1097481,432411,247269,59093,1240249]},"metrics":{"margem_bruta":[17.40130996245108,16.571594190575816,15.718993301739436,10.987677895224419,9.44123073187971,11.027929205460653,8.927430272273812,7.309237176984183],"margem_operacional":[0.20875500287286258,0.823957554644059,-0.05395290713999982,-2.46483498765751,0.47548019890438253,0.9696351723448595,0.6409843268061133,1.038444817310347],"margem_liquida":[0.11501329112550661,0.6262077547911036,-0.14575925601103354,-2.4963742790443906,0.1832069194014386,0.6826078292931831,0.4730745481074923,0.8639860084103423],"liquidez_corrente":[1.3997604234609402,1.504995933644067,1.4803554180086642,1.7420084875785986,16.87988725048417,1.9482382596739654,1.8557823453994926,1.298884841335002],"liquidez_seca":[1.2087566688408342,1.1146764842199155,1.1806826661842476,1.448872272234416,14.119748422849035,1.7762759677916413,1.7390766933086008,1.2598447227248453],"endividamento_total_pct":[78.18463083332202,59.00224789511059,61.97198167040118,93.40004667453596,52.2253561809342,66.19826036173848,58.84434512918955,79.53068982752592],"receita_yoy_pct":[null,16.50700941841139,-4.756689365869504,-14.789847490306073,-11.297286609042745,29.398569286794984,-4.125925774695672,75.37283261180234],"patrimonio_yoy_pct":[null,23.49748699957701,-4.218052327118782,-64.2683984960429,225.66262932493487,15.975587987409877,-5.556897707258535,35.00299123259411]},"dfc_2023":{"resultado_exercicio":163262.28,"clientes":-389946.17,"outros_creditos":-256421.17,"estoques":19475.93,"fornecedores":648809.37,"obrig_tributarias":6143.69,"obrig_trab_prev":12371,"outras_obrigacoes":7880.65,"caixa_operacional":210772.71,"financiamento":-295172.1,"variacao_caixa":-85899.39,"caixa_inicial":576094.12,"caixa_final":490194.73},"red_flags":["Fretes sobre compras muito elevados em 2023 frente a 2022.","Despesas legais e judiciais de 2023 podem ser nao recorrentes.","Outras receitas operacionais de 2022 nao se repetiram em 2023.","Imobilizado liquido contabil muito baixo para um posto em operacao.","Mudancas classificatorias reduzem comparabilidade direta da serie."],"model_inputs":[["Receita liquida base","2021-2023 com maior peso em 2022-2023","Usar 2023 como teto de escala, mas validar sustentabilidade."],["Margem bruta normalizada","Faixa conservadora entre 8% e 10%","2023 ficou em 7,3%; 2021 em 11,0%; 2022 em 8,9%."],["Margem EBIT","Faixa de 0,7% a 1,2%","Compativel com historico observado."],["Capital de giro","Separar clientes, fornecedores, estoques e receitas antecipadas","Nao assumir estabilidade automatica do giro."],["CAPEX manutencao","Estimativa economica e nao apenas contabil","Base fisica do posto parece sub-representada no BP."],["Partes relacionadas","Tratar fora da operacao ate prova em contrario","Necessario depurar efeito no EV e equity value."]]};
+const payload={"years":[2016,2017,2018,2019,2020,2021,2022,2023],"data":{"receita_bruta":[10428999.43,12134265.21,11556816.19,9804745.84,8699702.13,11257267.09,10792316.24,18919859.21],"receita_liquida":[10355507.51,12064892.11,11491002.67,9791500.9,8685326.98,11238688.85,10774988.89,18896403.23],"cmv":[8553513.55,10065547.15,9684732.73,8715642.32,7865325.22,9999294.2,9813059.27,17515220.3],"lucro_bruto":[1801993.96,1999344.96,1806269.94,1075858.58,820001.76,1239394.65,961929.62,1381182.93],"despesas_operacionais":[1601328.14,1702359.8,1676721.73,1253385.34,774303.61,1136721.08,1119121.39,1216902],"resultado_operacional":[21617.64,99409.59,-6199.73,-241344.34,41297.01,108974.28,69065.99,196228.72],"lucro_liquido":[11910.21,75551.29,-16749.2,-244432.51,15912.12,76716.17,50973.73,163262.28],"ativo_total":[1473860,970241,1000131,2069651,927829,1520546,1177843,3197118],"ativo_circulante":[1339134,860504,916491,1455577,880303,1479309,1088498,1629490],"disponivel":[91644,104337,78119,343089,485271,772876,576094,490195],"clientes":[364042,279534,254169,592974,96886,430661,300964,690910],"estoques":[182731,223171,185528,244937,143944,130572,68453,48977],"passivo_circulante":[956688,571765,619102,835574,52151,759306,586544,1254530],"fornecedores_cp":[422867,515130,486992,647299,6656,72096,196103,837694],"passivo_nao_circulante":[195644,699,699,1097481,432411,247269,106550,1288160],"patrimonio_liquido":[321528,397079,380330,135898,442569,513272,484750,654427],"tributos_recuperar":[75611,88899,118190,151815,154202,145199,142986,146420],"obrig_tributarias":[2400,3520,7891,792,3353,2342,5791,11935],"obrig_trab_prev":[24489,27724,96276,159540,39256,176070,27586,39957],"outras_obrigacoes_cp":[25767,25391,27942,27942,2886,508799,357065,364945],"partes_relacionadas_pnc":[0,0,0,1097481,432411,247269,59093,1240249]},"metrics":{"margem_bruta":[17.40130996245108,16.571594190575816,15.718993301739436,10.987677895224419,9.44123073187971,11.027929205460653,8.927430272273812,7.309237176984183],"margem_operacional":[0.20875500287286258,0.823957554644059,-0.05395290713999982,-2.46483498765751,0.47548019890438253,0.9696351723448595,0.6409843268061133,1.038444817310347],"margem_liquida":[0.11501329112550661,0.6262077547911036,-0.14575925601103354,-2.4963742790443906,0.1832069194014386,0.6826078292931831,0.4730745481074923,0.8639860084103423],"liquidez_corrente":[1.3997604234609402,1.504995933644067,1.4803554180086642,1.7420084875785986,16.87988725048417,1.9482382596739654,1.8557823453994926,1.298884841335002],"liquidez_seca":[1.2087566688408342,1.1146764842199155,1.1806826661842476,1.448872272234416,14.119748422849035,1.7762759677916413,1.7390766933086008,1.2598447227248453],"endividamento_total_pct":[78.18463083332202,59.00224789511059,61.97198167040118,93.40004667453596,52.2253561809342,66.19826036173848,58.84434512918955,79.53068982752592],"receita_yoy_pct":[null,16.50700941841139,-4.756689365869504,-14.789847490306073,-11.297286609042745,29.398569286794984,-4.125925774695672,75.37283261180234],"patrimonio_yoy_pct":[null,23.49748699957701,-4.218052327118782,-64.2683984960429,225.66262932493487,15.975587987409877,-5.556897707258535,35.00299123259411]},"dfc_2023":{"resultado_exercicio":163262.28,"clientes":-389946.17,"outros_creditos":-256421.17,"estoques":19475.93,"fornecedores":648809.37,"obrig_tributarias":6143.69,"obrig_trab_prev":12371,"outras_obrigacoes":7880.65,"caixa_operacional":210772.71,"financiamento":-295172.1,"variacao_caixa":-85899.39,"caixa_inicial":576094.12,"caixa_final":490194.73},"red_flags":["Fretes sobre compras muito elevados em 2023 frente a 2022.","Despesas legais e judiciais de 2023 podem ser não recorrentes.","Outras receitas operacionais de 2022 não se repetiram em 2023.","Imobilizado líquido contábil muito baixo para um posto em operação.","Mudanças classificatórias reduzem a comparabilidade direta da série."],"model_inputs":[["Receita líquida base","2021-2023, com maior peso em 2022-2023","Usar 2023 como teto de escala, mas validar sustentabilidade."],["Margem bruta normalizada","Faixa conservadora entre 8% e 10%","2023 ficou em 7,3%; 2021 em 11,0%; 2022 em 8,9%."],["Margem EBIT","Faixa de 0,7% a 1,2%","Compatível com o histórico observado."],["Capital de giro","Separar clientes, fornecedores, estoques e receitas antecipadas","Não assumir estabilidade automática do giro."],["CAPEX de manutenção","Estimativa econômica, não apenas contábil","A base física do posto parece sub-representada no balanço patrimonial."],["Partes relacionadas","Tratar fora da operação até prova em contrário","Necessário depurar o efeito no enterprise value e no equity value."]]};
 const years=payload.years,D=payload.data,M=payload.metrics,DFC=payload.dfc_2023;
 const qs=s=>document.querySelector(s),qsa=s=>[...document.querySelectorAll(s)];
 const brl=v=>v==null||isNaN(v)?"-":new Intl.NumberFormat("pt-BR",{style:"currency",currency:"BRL",maximumFractionDigits:0}).format(v);
@@ -269,36 +269,36 @@ function render(){
 function renderKpis(st,rev,gross,net,op,yoy,score){
   const last=st.last,marginAvg=avg(serie("margem_liquida",st.s,st.e)),cash=DFC.caixa_final,working=D.clientes[last]+D.estoques[last]-D.fornecedores_cp[last];
   const items=[
-    ["Receita liquida",brl(D.receita_liquida[last]),"Periodo: "+pct(yoy),yoy==null?"":yoy>=0?"good":"bad"],
+    ["Receita líquida",brl(D.receita_liquida[last]),"Período: "+pct(yoy),yoy==null?"":yoy>=0?"good":"bad"],
     ["Lucro bruto",brl(D.lucro_bruto[last]),"Margem: "+pct(M.margem_bruta[last]),M.margem_bruta[last]>=10?"good":"warn"],
-    ["Lucro liquido",brl(D.lucro_liquido[last]),"Margem media: "+pct(marginAvg),M.margem_liquida[last]>0?"good":"bad"],
+    ["Lucro líquido",brl(D.lucro_liquido[last]),"Margem média: "+pct(marginAvg),M.margem_liquida[last]>0?"good":"bad"],
     ["Liquidez corrente",num(M.liquidez_corrente[last]),"Seca: "+num(M.liquidez_seca[last]),M.liquidez_corrente[last]>=1.5?"good":"warn"],
-    ["Capital giro liquido",brl(working),"Clientes + estoque - fornecedores",working>=0?"good":"warn"],
-    ["Score financeiro",score+"/100","Leitura sintetica do ano final",score>=65?"good":score>=45?"warn":"bad"]
+    ["Capital de giro líquido",brl(working),"Clientes + estoque - fornecedores",working>=0?"good":"warn"],
+    ["Score financeiro",score+"/100","Leitura sintética do ano final",score>=65?"good":score>=45?"warn":"bad"]
   ];
   qs("#kpis").innerHTML=items.map(i=>`<article class="metric"><small>${i[0]}</small><strong>${i[1]}</strong><div class="delta ${i[3]}">${i[2]}</div></article>`).join("");
-  qs("#mobileSummary").innerHTML=`<b>${qs("#endYear").value}: ${brl(D.receita_liquida[last])} de receita</b><br>Margem liquida ${pct(M.margem_liquida[last])}, liquidez ${num(M.liquidez_corrente[last])}, score ${score}/100. Use as abas para ver performance, giro e valuation.`;
+  qs("#mobileSummary").innerHTML=`<b>${qs("#endYear").value}: ${brl(D.receita_liquida[last])} de receita</b><br>Margem líquida ${pct(M.margem_liquida[last])}, liquidez ${num(M.liquidez_corrente[last])}, score ${score}/100. Use as abas para ver performance, giro e valuation.`;
 }
 function renderScore(last,score){
   qs("#scoreValue").textContent=score;
   qs(".gauge").style.background=`conic-gradient(${score>=65?colors.green:score>=45?colors.amber:colors.red} 0 ${score}%,#253144 ${score}% 100%)`;
-  qs("#scoreText").textContent=score>=65?"Operacao lucrativa, mas ainda estreita. O ponto critico e defender margem e caixa.":score>=45?"Qualidade media: receita existe, mas giro, margem e endividamento exigem diligencia.":"Risco elevado: valuation deve ser conservador ate normalizar margem, passivos e caixa.";
-  const bars=[["Margem liquida",Math.max(5,Math.min(100,M.margem_liquida[last]*55+45))],["Liquidez",Math.min(100,M.liquidez_corrente[last]/2.2*100)],["Endividamento",Math.max(5,100-M.endividamento_total_pct[last])],["Crescimento",Math.max(5,Math.min(100,(M.receita_yoy_pct[last]||0)+25))]];
+  qs("#scoreText").textContent=score>=65?"Operação lucrativa, mas ainda estreita. O ponto crítico é defender margem e caixa.":score>=45?"Qualidade média: há receita, mas giro, margem e endividamento exigem diligência.":"Risco elevado: o valuation deve ser conservador até normalizar margem, passivos e caixa.";
+  const bars=[["Margem líquida",Math.max(5,Math.min(100,M.margem_liquida[last]*55+45))],["Liquidez",Math.min(100,M.liquidez_corrente[last]/2.2*100)],["Endividamento",Math.max(5,100-M.endividamento_total_pct[last])],["Crescimento",Math.max(5,Math.min(100,(M.receita_yoy_pct[last]||0)+25))]];
   qs("#scoreBars").innerHTML=bars.map(b=>`<div class="hint">${b[0]}<div class="heat"><i style="width:${b[1]}%"></i></div></div>`).join("");
 }
 function renderInsights(last,yoy,score){
   const mode=qs("#mode").value;
   const base=[
     ["value","Escala acelerou",years[last]+" cresceu "+pct(M.receita_yoy_pct[last])+", com margem bruta de "+pct(M.margem_bruta[last])+"."],
-    ["risk","Margem estreita","Lucro liquido de "+brl2(D.lucro_liquido[last])+" representa apenas "+pct(M.margem_liquida[last])+" da receita."],
-    ["cash","Caixa nao acompanhou lucro","Mesmo com lucro positivo, a variacao de caixa em 2023 foi "+brl2(DFC.variacao_caixa)+"."],
-    ["risk","Partes relacionadas materiais","Passivo nao circulante relacionado chega a "+brl(D.partes_relacionadas_pnc[last])+" em 2023."],
-    ["value","Liquidez ainda operacional","Liquidez corrente encerra em "+num(M.liquidez_corrente[last])+", acima de 1, mas abaixo do pico historico."],
+    ["risk","Margem estreita","Lucro líquido de "+brl2(D.lucro_liquido[last])+" representa apenas "+pct(M.margem_liquida[last])+" da receita."],
+    ["cash","Caixa não acompanhou o lucro","Mesmo com lucro positivo, a variação de caixa em 2023 foi "+brl2(DFC.variacao_caixa)+"."],
+    ["risk","Partes relacionadas materiais","O passivo não circulante com partes relacionadas chega a "+brl(D.partes_relacionadas_pnc[last])+" em "+years[last]+"."],
+    ["value","Liquidez ainda operacional","A liquidez corrente encerra em "+num(M.liquidez_corrente[last])+", acima de 1, mas abaixo do pico histórico."],
     ["cash","Fornecedor financia giro","Fornecedores CP subiram para "+brl(D.fornecedores_cp[last])+", reduzindo pressao imediata de caixa."]
   ];
   const filtered=mode==="risco"?base.filter(x=>x[0]==="risk"):mode==="valuation"?base.filter(x=>x[0]!=="cash"):base;
   qs("#insights").innerHTML=filtered.map(x=>`<article class="insight ${x[0]}"><b>${x[1]}</b><p>${x[2]}</p></article>`).join("");
-  qs("#dynamicDiagnosis").innerHTML=`No recorte <b>${qs("#startYear").value}-${qs("#endYear").value}</b>, a leitura principal e de empresa com receita relevante, margem liquida baixa e alta sensibilidade a compras, fretes e giro. O score atual e <b>${score}/100</b>. Para defender valuation, o caso precisa provar margem bruta normalizada acima de 8%, CAPEX de manutencao realista e tratamento separado das contas com partes relacionadas.`;
+  qs("#dynamicDiagnosis").innerHTML=`No recorte <b>${qs("#startYear").value}-${qs("#endYear").value}</b>, a leitura principal é de uma empresa com receita relevante, margem líquida baixa e alta sensibilidade a compras, fretes e giro. O score atual é <b>${score}/100</b>. Para defender o valuation, o caso precisa comprovar margem bruta normalizada acima de 8%, CAPEX de manutenção realista e tratamento separado das contas com partes relacionadas.`;
 }
 function renderActiveView(st){
   if(activeTab==="overview") renderOverviewCharts(st);
@@ -311,10 +311,10 @@ function renderOverviewCharts(st){
   const s=st.s,e=st.e,ys=st.ys,last=st.last;
   const layout=getLayout(),config=getConfig();
   Plotly.react("chartExecutive",[
-    {x:ys,y:serie("receita_liquida",s,e),type:"bar",name:"Receita liquida",marker:{color:colors.blue}},
+    {x:ys,y:serie("receita_liquida",s,e),type:"bar",name:"Receita líquida",marker:{color:colors.blue}},
     {x:ys,y:serie("lucro_bruto",s,e),type:"scatter",mode:"lines+markers",name:"Lucro bruto",line:{color:colors.green,width:4}},
-    {x:ys,y:serie("lucro_liquido",s,e),type:"scatter",mode:"lines+markers",name:"Lucro liquido",line:{color:colors.amber,width:4}},
-    {x:ys,y:serie("margem_liquida",s,e),type:"scatter",mode:"lines+markers",name:"Margem liquida %",yaxis:"y2",line:{color:colors.red,width:3,dash:"dot"}}
+    {x:ys,y:serie("lucro_liquido",s,e),type:"scatter",mode:"lines+markers",name:"Lucro líquido",line:{color:colors.amber,width:4}},
+    {x:ys,y:serie("margem_liquida",s,e),type:"scatter",mode:"lines+markers",name:"Margem líquida %",yaxis:"y2",line:{color:colors.red,width:3,dash:"dot"}}
   ],{...layout,yaxis:{tickprefix:"R$ ",gridcolor:"#263348",automargin:true},yaxis2:{overlaying:"y",side:"right",ticksuffix:"%",gridcolor:"rgba(0,0,0,0)",automargin:true},barmode:"group"},config);
   const rank=years.map((y,i)=>({y,score:metricScore(i),rec:D.receita_liquida[i],ml:M.margem_liquida[i]})).sort((a,b)=>b.score-a.score);
   qs("#rankTable").innerHTML="<thead><tr><th>Ano</th><th>Score</th><th>Receita</th><th>Margem</th></tr></thead><tbody>"+rank.map(r=>`<tr><td>${r.y}</td><td class="num">${r.score}</td><td class="num">${brl(r.rec)}</td><td class="num">${pct(r.ml)}</td></tr>`).join("")+"</tbody>";
@@ -322,7 +322,7 @@ function renderOverviewCharts(st){
 function renderPerformanceCharts(st){
   const s=st.s,e=st.e,ys=st.ys,last=st.last,layout=getLayout(),config=getConfig();
   Plotly.react("chartPnl",[
-    {x:ys,y:serie("receita_liquida",s,e),type:"bar",name:"Receita liquida",marker:{color:colors.blue}},
+    {x:ys,y:serie("receita_liquida",s,e),type:"bar",name:"Receita líquida",marker:{color:colors.blue}},
     {x:ys,y:serie("cmv",s,e),type:"bar",name:"CMV",marker:{color:"#63738a"}},
     {x:ys,y:serie("despesas_operacionais",s,e),type:"bar",name:"Despesas operacionais",marker:{color:colors.red}},
     {x:ys,y:serie("resultado_operacional",s,e),type:"scatter",mode:"lines+markers",name:"Resultado operacional",line:{color:colors.green,width:4}}
@@ -330,11 +330,11 @@ function renderPerformanceCharts(st){
   Plotly.react("chartMargins",[
     {x:ys,y:serie("margem_bruta",s,e),type:"scatter",mode:"lines+markers",name:"Bruta",line:{width:4,color:colors.green}},
     {x:ys,y:serie("margem_operacional",s,e),type:"scatter",mode:"lines+markers",name:"Operacional",line:{width:4,color:colors.blue}},
-    {x:ys,y:serie("margem_liquida",s,e),type:"scatter",mode:"lines+markers",name:"Liquida",line:{width:4,color:colors.amber}}
+    {x:ys,y:serie("margem_liquida",s,e),type:"scatter",mode:"lines+markers",name:"Líquida",line:{width:4,color:colors.amber}}
   ],{...layout,yaxis:{ticksuffix:"%",gridcolor:"#263348",automargin:true},shapes:[{type:"line",x0:ys[0],x1:ys[ys.length-1],y0:0,y1:0,line:{color:"#728199",dash:"dot"}}]},config);
-  Plotly.react("chartYoy",[{x:ys,y:serie("receita_yoy_pct",s,e),type:"bar",name:"YoY",marker:{color:serie("receita_yoy_pct",s,e).map(v=>v>=0?colors.green:colors.red)}}],{...layout,yaxis:{ticksuffix:"%",gridcolor:"#263348",automargin:true}},config);
+  Plotly.react("chartYoy",[{x:ys,y:serie("receita_yoy_pct",s,e),type:"bar",name:"Variação anual",marker:{color:serie("receita_yoy_pct",s,e).map(v=>v>=0?colors.green:colors.red)}}],{...layout,yaxis:{ticksuffix:"%",gridcolor:"#263348",automargin:true}},config);
   Plotly.react("chartProfit100",[{x:ys,y:serie("margem_liquida",s,e),type:"bar",name:"Lucro por R$ 100",marker:{color:colors.amber},text:serie("margem_liquida",s,e).map(pct),textposition:"auto"}],{...layout,yaxis:{title:"R$ por R$ 100 de receita",gridcolor:"#263348",automargin:true}},config);
-  Plotly.react("chartWaterfallResult",[{type:"waterfall",x:["Receita","CMV","Lucro bruto","Despesas","Resultado op.","Outros/IR","Lucro liquido"],y:[D.receita_liquida[last],-D.cmv[last],D.lucro_bruto[last],-D.despesas_operacionais[last],D.resultado_operacional[last],D.lucro_liquido[last]-D.resultado_operacional[last],D.lucro_liquido[last]],measure:["relative","relative","total","relative","total","relative","total"],connector:{line:{color:"#718096"}}}],{...layout,yaxis:{tickprefix:"R$ ",gridcolor:"#263348",automargin:true},margin:isMobile()?{l:46,r:8,t:16,b:86}:{l:62,r:16,t:22,b:78}},config);
+  Plotly.react("chartWaterfallResult",[{type:"waterfall",x:["Receita","CMV","Lucro bruto","Despesas","Resultado op.","Outros/IR","Lucro líquido"],y:[D.receita_liquida[last],-D.cmv[last],D.lucro_bruto[last],-D.despesas_operacionais[last],D.resultado_operacional[last],D.lucro_liquido[last]-D.resultado_operacional[last],D.lucro_liquido[last]],measure:["relative","relative","total","relative","total","relative","total"],connector:{line:{color:"#718096"}}}],{...layout,title:{text:"Ano final: "+years[last],font:{size:isMobile()?11:13}},yaxis:{tickprefix:"R$ ",gridcolor:"#263348",automargin:true},margin:isMobile()?{l:46,r:8,t:30,b:86}:{l:62,r:16,t:38,b:78}},config);
 }
 function renderCapitalCharts(st){
   const s=st.s,e=st.e,ys=st.ys,last=st.last,layout=getLayout(),config=getConfig();
@@ -342,7 +342,7 @@ function renderCapitalCharts(st){
     {x:ys,y:serie("clientes",s,e),type:"scatter",mode:"lines+markers",name:"Clientes",line:{color:colors.blue,width:4}},
     {x:ys,y:serie("estoques",s,e),type:"scatter",mode:"lines+markers",name:"Estoques",line:{color:colors.amber,width:4}},
     {x:ys,y:serie("fornecedores_cp",s,e),type:"scatter",mode:"lines+markers",name:"Fornecedores CP",line:{color:colors.green,width:4}},
-    {x:ys,y:ys.map((_,i)=>serie("clientes",s,e)[i]+serie("estoques",s,e)[i]-serie("fornecedores_cp",s,e)[i]),type:"bar",name:"Giro liquido",marker:{color:"#8bb7ff"}}
+    {x:ys,y:ys.map((_,i)=>serie("clientes",s,e)[i]+serie("estoques",s,e)[i]-serie("fornecedores_cp",s,e)[i]),type:"bar",name:"Giro líquido",marker:{color:"#8bb7ff"}}
   ],{...layout,yaxis:{tickprefix:"R$ ",gridcolor:"#263348",automargin:true}},config);
   Plotly.react("chartLiquidity",[
     {x:ys,y:serie("liquidez_corrente",s,e),type:"scatter",mode:"lines+markers",name:"Liquidez corrente",line:{color:colors.cyan,width:4}},
@@ -355,8 +355,8 @@ function renderCapitalCharts(st){
     {x:ys,y:serie("passivo_nao_circulante",s,e),type:"bar",name:"Passivo NC",marker:{color:"#b56bff"}},
     {x:ys,y:serie("patrimonio_liquido",s,e),type:"scatter",mode:"lines+markers",name:"PL",line:{color:colors.green,width:4}}
   ],{...layout,barmode:"group",yaxis:{tickprefix:"R$ ",gridcolor:"#263348",automargin:true}},config);
-  Plotly.react("chartPassivo",[{labels:["Fornecedores CP","Obrig. tributarias","Obrig. trab./prev.","Outras obrig. CP","Partes rel. PNC"],values:[D.fornecedores_cp[last],D.obrig_tributarias[last],D.obrig_trab_prev[last],D.outras_obrigacoes_cp[last],D.partes_relacionadas_pnc[last]],type:"pie",hole:.55,marker:{colors:[colors.green,colors.amber,colors.blue,"#8bb7ff",colors.red]},textinfo:isMobile()?"none":"label+percent"}],{...layout,margin:{l:8,r:8,t:12,b:isMobile()?52:12},showlegend:true},config);
-  Plotly.react("chartDfc",[{type:"waterfall",x:["Lucro","Clientes","Creditos","Estoques","Fornecedores","Tributos","Trab.","Outras","Op.","Fin.","Final"],y:[DFC.resultado_exercicio,DFC.clientes,DFC.outros_creditos,DFC.estoques,DFC.fornecedores,DFC.obrig_tributarias,DFC.obrig_trab_prev,DFC.outras_obrigacoes,DFC.caixa_operacional,DFC.financiamento,DFC.variacao_caixa],measure:["relative","relative","relative","relative","relative","relative","relative","relative","total","relative","total"]}],{...layout,yaxis:{tickprefix:"R$ ",gridcolor:"#263348",automargin:true},margin:isMobile()?{l:46,r:8,t:16,b:86}:{l:58,r:10,t:20,b:86}},config);
+  Plotly.react("chartPassivo",[{labels:["Fornecedores CP","Obrig. tributárias","Obrig. trab./prev.","Outras obrig. CP","Partes rel. PNC"],values:[D.fornecedores_cp[last],D.obrig_tributarias[last],D.obrig_trab_prev[last],D.outras_obrigacoes_cp[last],D.partes_relacionadas_pnc[last]],type:"pie",hole:.55,marker:{colors:[colors.green,colors.amber,colors.blue,"#8bb7ff",colors.red]},textinfo:isMobile()?"none":"label+percent"}],{...layout,title:{text:"Ano final: "+years[last],font:{size:isMobile()?11:13}},margin:{l:8,r:8,t:isMobile()?30:34,b:isMobile()?52:12},showlegend:true},config);
+  Plotly.react("chartDfc",[{type:"waterfall",x:["Lucro","Clientes","Créditos","Estoques","Fornecedores","Tributos","Trab.","Outras","Op.","Fin.","Final"],y:[DFC.resultado_exercicio,DFC.clientes,DFC.outros_creditos,DFC.estoques,DFC.fornecedores,DFC.obrig_tributarias,DFC.obrig_trab_prev,DFC.outras_obrigacoes,DFC.caixa_operacional,DFC.financiamento,DFC.variacao_caixa],measure:["relative","relative","relative","relative","relative","relative","relative","relative","total","relative","total"]}],{...layout,title:{text:"Fluxo de caixa de 2023",font:{size:isMobile()?11:13}},yaxis:{tickprefix:"R$ ",gridcolor:"#263348",automargin:true},margin:isMobile()?{l:46,r:8,t:30,b:86}:{l:58,r:10,t:38,b:86}},config);
 }
 function valuationCalc(st){
   const ebit=Number(qs("#ebitMargin").value)/100,g=Number(qs("#growth").value)/100,w=Number(qs("#wacc").value)/100,capex=Number(qs("#capex").value)/100,nwc=Number(qs("#nwc").value)/100;
@@ -369,12 +369,12 @@ function renderValuation(st){
   const layout=getLayout(),config=getConfig();
   ["ebitMargin","growth","wacc","capex","nwc"].forEach(id=>qs("#out"+({ebitMargin:"Ebit",growth:"Growth",wacc:"Wacc",capex:"Capex",nwc:"Nwc"}[id])).textContent=Number(qs("#"+id).value).toFixed(id==="growth"||id==="wacc"?2:1)+"%");
   const v=valuationCalc(st),equity=v.ev+DFC.caixa_final-D.partes_relacionadas_pnc[st.last];
-  qs("#valuationBox").innerHTML=`Receita normalizada: <b>${brl(v.baseRev)}</b><br>Enterprise value: <b>${brl(v.ev)}</b><br>Equity value preliminar ajustado por caixa e partes relacionadas PNC: <b>${brl(equity)}</b><br><span class="hint">Resultado altamente sensivel: margem EBIT, WACC e tratamento de partes relacionadas mudam a conclusao rapidamente.</span>`;
+  qs("#valuationBox").innerHTML=`Receita normalizada: <b>${brl(v.baseRev)}</b><br>Enterprise value: <b>${brl(v.ev)}</b><br>Equity value preliminar ajustado por caixa e partes relacionadas PNC: <b>${brl(equity)}</b><br><span class="hint">Resultado altamente sensível: margem EBIT, WACC e tratamento de partes relacionadas mudam a conclusão rapidamente.</span>`;
   Plotly.react("chartFcf",[{x:[1,2,3,4,5].map(y=>"Ano "+y),y:v.fcfs,type:"bar",marker:{color:v.fcfs.map(x=>x>=0?colors.green:colors.red)},text:v.fcfs.map(brl),textposition:"auto"}],{...layout,yaxis:{tickprefix:"R$ ",gridcolor:"#263348",automargin:true}},config);
   const gs=[0,.01,.02,.03,.04,.05],ws=[.12,.14,.16,.18,.20,.22],z=ws.map(w=>gs.map(g=>sensitivityEv(st,g,w,v.ebit,v.capex,v.nwc)));
   Plotly.react("chartSensitivity",[{x:gs.map(x=>(x*100).toFixed(0)+"%"),y:ws.map(x=>(x*100).toFixed(0)+"%"),z,type:"heatmap",colorscale:"Viridis",hovertemplate:"Cresc. %{x}<br>WACC %{y}<br>EV %{z:,.0f}<extra></extra>"}],{...layout,xaxis:{title:"Crescimento",gridcolor:"#263348"},yaxis:{title:"WACC",gridcolor:"#263348"}},config);
-  qs("#valuationRisks").innerHTML=payload.red_flags.map(r=>`<div class="insight risk" style="margin-bottom:10px"><b>${r}</b><p>Tratar antes de apresentar numero final de valor.</p></div>`).join("");
-  qs("#inputsTable").innerHTML="<thead><tr><th>Item</th><th>Base sugerida</th><th>Comentario</th></tr></thead><tbody>"+payload.model_inputs.map(r=>`<tr><td>${r[0]}</td><td>${r[1]}</td><td>${r[2]}</td></tr>`).join("")+"</tbody>";
+  qs("#valuationRisks").innerHTML=payload.red_flags.map(r=>`<div class="insight risk" style="margin-bottom:10px"><b>${r}</b><p>Tratar antes de apresentar o número final de valor.</p></div>`).join("");
+  qs("#inputsTable").innerHTML="<thead><tr><th>Item</th><th>Base sugerida</th><th>Comentário</th></tr></thead><tbody>"+payload.model_inputs.map(r=>`<tr><td>${r[0]}</td><td>${r[1]}</td><td>${r[2]}</td></tr>`).join("")+"</tbody>";
 }
 function sensitivityEv(st,g,w,ebit,capex,nwc){
   const tax=.34,baseRev=avg(serie("receita_liquida",Math.max(0,st.e-2),st.e));
@@ -384,11 +384,11 @@ function sensitivityEv(st,g,w,ebit,capex,nwc){
 }
 function renderTables(st){
   const layout=getLayout(),config=getConfig();
-  const rows=[["Receita bruta",D.receita_bruta],["Receita liquida",D.receita_liquida],["CMV",D.cmv],["Lucro bruto",D.lucro_bruto],["Despesas operacionais",D.despesas_operacionais],["Resultado operacional",D.resultado_operacional],["Lucro liquido",D.lucro_liquido],["Ativo total",D.ativo_total],["Ativo circulante",D.ativo_circulante],["Disponivel",D.disponivel],["Clientes",D.clientes],["Estoques",D.estoques],["Passivo circulante",D.passivo_circulante],["Fornecedores CP",D.fornecedores_cp],["Passivo nao circulante",D.passivo_nao_circulante],["Patrimonio liquido",D.patrimonio_liquido],["Margem bruta %",M.margem_bruta],["Margem operacional %",M.margem_operacional],["Margem liquida %",M.margem_liquida],["Liquidez corrente",M.liquidez_corrente],["Liquidez seca",M.liquidez_seca],["Endividamento total %",M.endividamento_total_pct]];
+  const rows=[["Receita bruta",D.receita_bruta],["Receita líquida",D.receita_liquida],["CMV",D.cmv],["Lucro bruto",D.lucro_bruto],["Despesas operacionais",D.despesas_operacionais],["Resultado operacional",D.resultado_operacional],["Lucro líquido",D.lucro_liquido],["Ativo total",D.ativo_total],["Ativo circulante",D.ativo_circulante],["Disponível",D.disponivel],["Clientes",D.clientes],["Estoques",D.estoques],["Passivo circulante",D.passivo_circulante],["Fornecedores CP",D.fornecedores_cp],["Passivo não circulante",D.passivo_nao_circulante],["Patrimônio líquido",D.patrimonio_liquido],["Margem bruta %",M.margem_bruta],["Margem operacional %",M.margem_operacional],["Margem líquida %",M.margem_liquida],["Liquidez corrente",M.liquidez_corrente],["Liquidez seca",M.liquidez_seca],["Endividamento total %",M.endividamento_total_pct]];
   qs("#historyTable").innerHTML="<thead><tr><th>Indicador</th>"+years.map(y=>`<th>${y}</th>`).join("")+"</tr></thead><tbody>"+rows.map(r=>`<tr><td>${r[0]}</td>${r[1].map(v=>`<td class="num">${r[0].includes("%")?pct(v):r[0].includes("Liquidez")?num(v):brl2(v)}</td>`).join("")}</tr>`).join("")+"</tbody>";
   const raw=[M.margem_bruta,M.margem_operacional,M.margem_liquida,M.liquidez_corrente,M.endividamento_total_pct];
   const matrix=raw.map((row,i)=>{const min=Math.min(...row),max=Math.max(...row);return row.map(v=>i===4?1-(v-min)/(max-min):(v-min)/(max-min));});
-  Plotly.react("chartMatrix",[{z:matrix,x:years,y:["Margem bruta","Margem op.","Margem liq.","Liquidez","Endividamento"],customdata:raw,type:"heatmap",colorscale:[[0,colors.red],[.5,colors.amber],[1,colors.green]],hovertemplate:"%{y}<br>%{x}: %{customdata:.2f}<extra></extra>",hoverongaps:false}],{...layout,margin:isMobile()?{l:92,r:8,t:14,b:42}:{l:130,r:20,t:20,b:50}},config);
+  Plotly.react("chartMatrix",[{z:matrix,x:years,y:["Margem bruta","Margem op.","Margem líq.","Liquidez","Endividamento"],customdata:raw,type:"heatmap",colorscale:[[0,colors.red],[.5,colors.amber],[1,colors.green]],hovertemplate:"%{y}<br>%{x}: %{customdata:.2f}<extra></extra>",hoverongaps:false}],{...layout,margin:isMobile()?{l:92,r:8,t:14,b:42}:{l:130,r:20,t:20,b:50}},config);
 }
 window.addEventListener("resize",()=>{if(rendered)document.querySelectorAll(".js-plotly-plot").forEach(p=>Plotly.Plots.resize(p));});
 initControls();
