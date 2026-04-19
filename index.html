@@ -16,21 +16,21 @@
 body{margin:0;background:radial-gradient(circle at top left,#3a1119 0,#12070a 36%,#090507 100%);color:var(--text);font-family:Inter,Segoe UI,Arial,sans-serif}
 button,input,select{font:inherit}
 button:focus-visible,select:focus-visible,input:focus-visible{outline:2px solid var(--cyan);outline-offset:2px}
-.app{max-width:1780px;margin:auto;padding:18px}
-.topbar{display:grid;grid-template-columns:1.15fr .42fr .58fr;gap:14px;align-items:stretch;margin-bottom:14px}
+.app{max-width:1840px;margin:auto;padding:22px}
+.topbar{display:grid;grid-template-columns:1.22fr .34fr .64fr;gap:16px;align-items:stretch;margin-bottom:16px}
 .brand,.control-rack,.panel,.metric,.insight,.tabbar{background:linear-gradient(180deg,rgba(45,22,28,.96),rgba(24,12,16,.98));border:1px solid var(--line);border-radius:8px;box-shadow:0 14px 34px rgba(0,0,0,.22)}
-.brand{padding:22px;position:relative;overflow:hidden}
+.brand{padding:26px;position:relative;overflow:hidden}
 .brand:after{content:"";position:absolute;right:18px;top:18px;width:220px;height:110px;background:linear-gradient(135deg,rgba(216,183,104,.26),rgba(247,243,241,.12));clip-path:polygon(0 35%,100% 0,100% 62%,0 100%);opacity:.8}
 .eyebrow{color:var(--amber);font-size:12px;text-transform:uppercase;letter-spacing:.12em;font-weight:800}
-h1{font-size:38px;line-height:1.05;margin:10px 0 10px;max-width:920px}
-.lead{color:var(--muted);line-height:1.55;max-width:920px}
+h1{font-size:42px;line-height:1.04;margin:10px 0 12px;max-width:980px}
+.lead{color:var(--muted);line-height:1.58;max-width:980px}
 .facts{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
 .chip{border:1px solid var(--line);background:#160b0f;color:#eadfdb;border-radius:999px;padding:7px 10px;font-size:12px}
 .identity-card{background:linear-gradient(180deg,var(--afr),#16080c);border:1px solid #5b3940;border-radius:8px;box-shadow:0 14px 34px rgba(0,0,0,.24);padding:12px;display:grid;grid-template-rows:1fr auto;gap:12px;min-height:250px}
 .identity-media{border:1px solid #5b3940;border-radius:8px;overflow:hidden;background:#2a090f;display:grid;place-items:center;min-height:176px}
 .identity-media img{width:100%;height:100%;object-fit:cover;object-position:center 48%;display:block}
 .identity-copy{display:grid;gap:4px}.identity-copy small{color:var(--amber);font-weight:900;letter-spacing:.1em;text-transform:uppercase;font-size:10px}.identity-copy strong{font-size:16px}.identity-copy span{color:var(--muted);font-size:12px;line-height:1.35}
-.control-rack{padding:16px;display:grid;gap:12px}
+.control-rack{padding:18px;display:grid;gap:14px}
 .control-title{font-weight:800;margin-bottom:2px}
 .field{display:grid;gap:7px}
 .field label{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;font-weight:800}
@@ -43,7 +43,7 @@ input[type=range]{accent-color:var(--blue);min-height:32px}
 .tab.active{background:#32131b;border-color:#77505a;color:#fff}
 .grid{display:grid;gap:14px}
 .metrics{grid-template-columns:repeat(6,1fr);margin-bottom:14px}
-.metric{padding:15px;min-height:126px}
+.metric{padding:17px;min-height:134px}
 .metric small{color:var(--muted);font-weight:800;text-transform:uppercase;letter-spacing:.07em;font-size:11px}
 .metric strong{display:block;font-size:25px;line-height:1.12;margin-top:9px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .delta{margin-top:9px;font-size:12px;color:var(--muted)}
@@ -53,7 +53,7 @@ input[type=range]{accent-color:var(--blue);min-height:32px}
 .panel{padding:16px;min-width:0}
 .panel-head{display:flex;align-items:start;justify-content:space-between;gap:12px;margin-bottom:10px}
 h2{font-size:17px;margin:0}.hint{color:var(--muted);font-size:12px;line-height:1.45;margin-top:5px}
-.chart{height:430px;min-width:0}.chart-sm{height:330px;min-width:0}.chart-xl{height:560px;min-width:0}
+.chart{height:460px;min-width:0}.chart-sm{height:360px;min-width:0}.chart-xl{height:610px;min-width:0}
 .score{display:grid;grid-template-columns:150px 1fr;gap:14px;align-items:center}
 .gauge{height:150px;border-radius:8px;background:conic-gradient(var(--green) 0 64%,#253144 64% 100%);display:grid;place-items:center}
 .gauge span{width:110px;height:110px;border-radius:999px;background:#101723;display:grid;place-items:center;font-size:28px;font-weight:900;border:1px solid var(--line)}
@@ -69,8 +69,13 @@ td.num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
 .sliders{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
 .slider-box{border:1px solid var(--line);border-radius:8px;padding:12px;background:#160b0f}.slider-box output{float:right;color:#fff;font-weight:800}.slider-box label{display:block;color:#eadfdb;font-size:13px;font-weight:800;margin-bottom:8px}
 .mobile-summary{display:none}
+.range-summary{display:grid;grid-template-columns:1.2fr repeat(3,1fr);gap:12px;margin-bottom:16px}
+.range-item{background:#160b0f;border:1px solid var(--line);border-radius:8px;padding:13px 14px;min-width:0}
+.range-item small{display:block;color:var(--muted);font-size:11px;font-weight:900;letter-spacing:.08em;text-transform:uppercase;margin-bottom:6px}
+.range-item strong{display:block;color:var(--text);font-size:18px;line-height:1.2}
+.range-item span{display:block;color:var(--muted);font-size:12px;margin-top:4px}
 .callout{background:#160b0f;border:1px solid #6a4650;border-radius:8px;padding:14px;color:#eadfdb;line-height:1.5}
-.signature{display:grid;grid-template-columns:auto 1fr auto;gap:14px;align-items:center;background:linear-gradient(90deg,#2a090f,#17090d);border:1px solid #5b3940;border-radius:8px;padding:12px 14px;margin-top:16px}.signature img{width:58px;height:58px;object-fit:cover;border-radius:6px;border:1px solid #5b3940}.signature strong{display:block}.signature span{color:var(--muted);font-size:12px}.signature .seal{color:var(--amber);font-weight:900;font-size:12px;letter-spacing:.08em;text-transform:uppercase}
+.signature{display:flex;align-items:center;justify-content:center;background:linear-gradient(90deg,#2a090f,#17090d);border:1px solid #5b3940;border-radius:8px;padding:18px;margin-top:16px}.signature img{width:112px;height:112px;object-fit:cover;object-position:center 48%;border-radius:8px;border:1px solid #5b3940;display:block}
 .footer{color:var(--muted);font-size:12px;margin:18px 0 4px;line-height:1.45}
 @media(max-width:1250px){.topbar,.cols-2,.cols-3,.cols-4{grid-template-columns:1fr}.metrics{grid-template-columns:repeat(3,1fr)}.sliders{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:720px){
@@ -79,11 +84,11 @@ td.num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
   .tabbar{overflow:auto;margin-left:-10px;margin-right:-10px;border-radius:0;border-left:0;border-right:0}
   select{height:44px}.tab{min-height:44px}.chart,.chart-xl{height:370px}.chart-sm{height:320px}.score{grid-template-columns:1fr}.sliders{grid-template-columns:1fr}.identity-card{grid-template-columns:96px 1fr;grid-template-rows:auto;min-height:auto;align-items:center}.identity-media{min-height:96px;height:96px}.identity-copy strong{font-size:15px}
   .brand:after{width:120px;height:70px;right:8px;top:8px;opacity:.45}.lead{font-size:14px}.eyebrow{font-size:11px}
-  h1{font-size:30px;max-width:78%}.metric{min-height:106px}.metric strong{font-size:20px;white-space:normal;overflow:visible;text-overflow:clip}.panel{overflow:auto}.insights{grid-template-columns:1fr}table{min-width:620px}#rankTable{min-width:420px}#inputsTable{min-width:560px}.signature{grid-template-columns:auto 1fr}.signature .seal{grid-column:1/-1}
+  h1{font-size:30px;max-width:78%}.metric{min-height:106px}.metric strong{font-size:20px;white-space:normal;overflow:visible;text-overflow:clip}.range-summary{grid-template-columns:1fr 1fr}.range-item strong{font-size:16px}.panel{overflow:auto}.insights{grid-template-columns:1fr}table{min-width:620px}#rankTable{min-width:420px}#inputsTable{min-width:560px}.signature{padding:14px}.signature img{width:82px;height:82px}
   .mobile-summary{display:block;margin-bottom:14px}
 }
 @media(max-width:470px){
-  .metrics,.row{grid-template-columns:1fr}.facts{gap:6px}.chip{font-size:11px}.chart,.chart-xl{height:340px}.chart-sm{height:290px}
+  .metrics,.row,.range-summary{grid-template-columns:1fr}.facts{gap:6px}.chip{font-size:11px}.chart,.chart-xl{height:340px}.chart-sm{height:290px}
   h1{font-size:27px;max-width:none}.metric strong{font-size:22px}.control-rack{gap:10px}.identity-card{grid-template-columns:80px 1fr}.identity-media{min-height:80px;height:80px}.identity-copy span{font-size:11px}
 }
 </style>
@@ -122,6 +127,8 @@ td.num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
       </div>
     </aside>
   </section>
+
+  <section class="range-summary" id="rangeSummary" aria-label="Resumo do período filtrado"></section>
 
   <nav class="tabbar">
     <button class="tab active" data-tab="overview">Visão geral</button>
@@ -208,8 +215,6 @@ td.num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
 
   <section class="signature" aria-label="Assinatura técnica AFR">
     <img src="afr-identidade.jpg" alt="" width="1080" height="1350" loading="lazy" decoding="async"/>
-    <div><strong>AFR | Soluções técnicas para decisões estratégicas</strong><span>Identidade visual do escritório responsável pela análise pericial e base de valuation.</span></div>
-    <div class="seal">Painel pericial executivo</div>
   </section>
   <div class="footer">Valores em R$ históricos. Este painel é uma base analítica para discussão gerencial, pericial e de pré-valuation; não substitui diligência contábil, fiscal, operacional e jurídica.</div>
 </main>
@@ -236,7 +241,7 @@ function initControls(){
     return;
   }
   ["startYear","endYear"].forEach(id=>{qs("#"+id).innerHTML=years.map(y=>`<option value="${y}">${y}</option>`).join("");});
-  qs("#startYear").value=2019; qs("#endYear").value=2023;
+  qs("#startYear").value=years[0]; qs("#endYear").value=years[years.length-1];
   qs("#mode").value="executivo"; qs("#scenario").value="base";
   const defaults={base:[1.0,2.0,16.0,.5,1.5],stress:[.65,0,20,.9,2.8],upside:[1.35,4.0,13.5,.35,.8]};
   function applyScenario(){
@@ -264,16 +269,28 @@ function render(){
   const rev=serie("receita_liquida",s,e),gross=serie("lucro_bruto",s,e),net=serie("lucro_liquido",s,e),op=serie("resultado_operacional",s,e);
   const yoy=first===last?null:(D.receita_liquida[last]/D.receita_liquida[first]-1)*100;
   const score=metricScore(last);
+  renderRangeSummary(st,yoy);
   renderKpis(st,rev,gross,net,op,yoy,score);
   renderScore(last,score);
   renderInsights(last,yoy,score);
   renderActiveView(st);
   rendered=true;
 }
+function renderRangeSummary(st,yoy){
+  const first=st.first,last=st.last,periodLabel=years[first]+"-"+years[last];
+  const yearsCount=st.e-st.s+1;
+  const startRevenue=D.receita_liquida[first],endRevenue=D.receita_liquida[last];
+  qs("#rangeSummary").innerHTML=[
+    ["Recorte aplicado",periodLabel,yearsCount+" exercícios analisados"],
+    ["Receita inicial",brl(startRevenue),years[first]],
+    ["Receita final",brl(endRevenue),years[last]],
+    ["Variação no período",pct(yoy),first===last?"Selecione mais de um ano para comparar":"Receita líquida final vs. inicial"]
+  ].map(item=>`<div class="range-item"><small>${item[0]}</small><strong>${item[1]}</strong><span>${item[2]}</span></div>`).join("");
+}
 function renderKpis(st,rev,gross,net,op,yoy,score){
   const last=st.last,marginAvg=avg(serie("margem_liquida",st.s,st.e)),cash=DFC.caixa_final,working=D.clientes[last]+D.estoques[last]-D.fornecedores_cp[last];
   const items=[
-    ["Receita líquida",brl(D.receita_liquida[last]),"Período: "+pct(yoy),yoy==null?"":yoy>=0?"good":"bad"],
+    ["Receita líquida final",brl(D.receita_liquida[last]),"Variação no período: "+pct(yoy),yoy==null?"":yoy>=0?"good":"bad"],
     ["Lucro bruto",brl(D.lucro_bruto[last]),"Margem: "+pct(M.margem_bruta[last]),M.margem_bruta[last]>=10?"good":"warn"],
     ["Lucro líquido",brl(D.lucro_liquido[last]),"Margem média: "+pct(marginAvg),M.margem_liquida[last]>0?"good":"bad"],
     ["Liquidez corrente",num(M.liquidez_corrente[last]),"Seca: "+num(M.liquidez_seca[last]),M.liquidez_corrente[last]>=1.5?"good":"warn"],
@@ -281,7 +298,7 @@ function renderKpis(st,rev,gross,net,op,yoy,score){
     ["Score financeiro",score+"/100","Leitura sintética do ano final",score>=65?"good":score>=45?"warn":"bad"]
   ];
   qs("#kpis").innerHTML=items.map(i=>`<article class="metric"><small>${i[0]}</small><strong>${i[1]}</strong><div class="delta ${i[3]}">${i[2]}</div></article>`).join("");
-  qs("#mobileSummary").innerHTML=`<b>${qs("#endYear").value}: ${brl(D.receita_liquida[last])} de receita</b><br>Margem líquida ${pct(M.margem_liquida[last])}, liquidez ${num(M.liquidez_corrente[last])}, score ${score}/100. Use as abas para ver performance, giro e valuation.`;
+  qs("#mobileSummary").innerHTML=`<b>Recorte ${qs("#startYear").value}-${qs("#endYear").value}: ${brl(D.receita_liquida[last])} de receita final</b><br>Margem líquida ${pct(M.margem_liquida[last])}, liquidez ${num(M.liquidez_corrente[last])}, score ${score}/100. Use as abas para ver performance, giro e valuation.`;
 }
 function renderScore(last,score){
   qs("#scoreValue").textContent=score;
