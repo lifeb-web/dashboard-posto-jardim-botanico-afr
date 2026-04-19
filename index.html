@@ -75,7 +75,11 @@ td.num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
 .range-item strong{display:block;color:var(--text);font-size:18px;line-height:1.2}
 .range-item span{display:block;color:var(--muted);font-size:12px;margin-top:4px}
 .callout{background:#160b0f;border:1px solid #6a4650;border-radius:8px;padding:14px;color:#eadfdb;line-height:1.5}
-.signature{display:flex;align-items:center;justify-content:center;background:linear-gradient(90deg,#2a090f,#17090d);border:1px solid #5b3940;border-radius:8px;padding:18px;margin-top:16px}.signature img{width:112px;height:112px;object-fit:cover;object-position:center 48%;border-radius:8px;border:1px solid #5b3940;display:block}
+.signature{display:grid;grid-template-columns:auto 1fr auto;gap:16px;align-items:center;background:linear-gradient(90deg,#2a090f,#17090d);border:1px solid #5b3940;border-radius:8px;padding:14px 16px;margin-top:16px}
+.signature img{width:64px;height:64px;object-fit:cover;object-position:center 45%;border-radius:8px;border:1px solid #5b3940;display:block}
+.signature strong{display:block;color:var(--text);font-size:15px;line-height:1.25}
+.signature span{display:block;color:var(--muted);font-size:12px;line-height:1.35;margin-top:3px}
+.signature .seal{color:var(--amber);font-weight:900;font-size:12px;letter-spacing:.08em;text-transform:uppercase;text-align:right;white-space:nowrap}
 .footer{color:var(--muted);font-size:12px;margin:18px 0 4px;line-height:1.45}
 @media(max-width:1250px){.topbar,.cols-2,.cols-3,.cols-4{grid-template-columns:1fr}.metrics{grid-template-columns:repeat(3,1fr)}.sliders{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:720px){
@@ -84,7 +88,7 @@ td.num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
   .tabbar{overflow:auto;margin-left:-10px;margin-right:-10px;border-radius:0;border-left:0;border-right:0}
   select{height:44px}.tab{min-height:44px}.chart,.chart-xl{height:370px}.chart-sm{height:320px}.score{grid-template-columns:1fr}.sliders{grid-template-columns:1fr}.identity-card{grid-template-columns:96px 1fr;grid-template-rows:auto;min-height:auto;align-items:center}.identity-media{min-height:96px;height:96px}.identity-copy strong{font-size:15px}
   .brand:after{width:120px;height:70px;right:8px;top:8px;opacity:.45}.lead{font-size:14px}.eyebrow{font-size:11px}
-  h1{font-size:30px;max-width:78%}.metric{min-height:106px}.metric strong{font-size:20px;white-space:normal;overflow:visible;text-overflow:clip}.range-summary{grid-template-columns:1fr 1fr}.range-item strong{font-size:16px}.panel{overflow:auto}.insights{grid-template-columns:1fr}table{min-width:620px}#rankTable{min-width:420px}#inputsTable{min-width:560px}.signature{padding:14px}.signature img{width:82px;height:82px}
+  h1{font-size:30px;max-width:78%}.metric{min-height:106px}.metric strong{font-size:20px;white-space:normal;overflow:visible;text-overflow:clip}.range-summary{grid-template-columns:1fr 1fr}.range-item strong{font-size:16px}.panel{overflow:auto}.insights{grid-template-columns:1fr}table{min-width:620px}#rankTable{min-width:420px}#inputsTable{min-width:560px}.signature{grid-template-columns:auto 1fr;padding:14px}.signature img{width:58px;height:58px}.signature .seal{grid-column:1/-1;text-align:left;white-space:normal}
   .mobile-summary{display:block;margin-bottom:14px}
 }
 @media(max-width:470px){
@@ -215,6 +219,8 @@ td.num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
 
   <section class="signature" aria-label="Assinatura técnica AFR">
     <img src="afr-identidade.jpg" alt="" width="1080" height="1350" loading="lazy" decoding="async"/>
+    <div><strong>AFR | Soluções técnicas para decisões estratégicas</strong><span>Escritório responsável pela análise pericial e base de valuation.</span></div>
+    <div class="seal">Painel pericial executivo</div>
   </section>
   <div class="footer">Valores em R$ históricos. Este painel é uma base analítica para discussão gerencial, pericial e de pré-valuation; não substitui diligência contábil, fiscal, operacional e jurídica.</div>
 </main>
