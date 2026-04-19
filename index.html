@@ -4,6 +4,7 @@
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1"/>
 <title>Painel Pericial Financeiro - Posto Jardim Botânico</title>
+<link rel="preconnect" href="https://cdn.plot.ly"/>
 <script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
 <style>
 :root{
@@ -17,8 +18,7 @@ button,input,select{font:inherit}
 button:focus-visible,select:focus-visible,input:focus-visible{outline:2px solid var(--cyan);outline-offset:2px}
 .app{max-width:1780px;margin:auto;padding:18px}
 .topbar{display:grid;grid-template-columns:1.15fr .42fr .58fr;gap:14px;align-items:stretch;margin-bottom:14px}
-.brand,.control-rack,.panel,.metric,.insight,.tabbar{background:linear-gradient(180deg,rgba(26,38,57,.96),rgba(15,22,33,.98));border:1px solid var(--line);border-radius:8px;box-shadow:0 14px 34px rgba(0,0,0,.22)}
-.brand,.control-rack,.panel,.metric,.insight,.tabbar{background:linear-gradient(180deg,rgba(45,22,28,.96),rgba(24,12,16,.98))}
+.brand,.control-rack,.panel,.metric,.insight,.tabbar{background:linear-gradient(180deg,rgba(45,22,28,.96),rgba(24,12,16,.98));border:1px solid var(--line);border-radius:8px;box-shadow:0 14px 34px rgba(0,0,0,.22)}
 .brand{padding:22px;position:relative;overflow:hidden}
 .brand:after{content:"";position:absolute;right:18px;top:18px;width:220px;height:110px;background:linear-gradient(135deg,rgba(216,183,104,.26),rgba(247,243,241,.12));clip-path:polygon(0 35%,100% 0,100% 62%,0 100%);opacity:.8}
 .eyebrow{color:var(--amber);font-size:12px;text-transform:uppercase;letter-spacing:.12em;font-weight:800}
@@ -38,14 +38,14 @@ h1{font-size:38px;line-height:1.05;margin:10px 0 10px;max-width:920px}
 select,input[type=range]{width:100%}
 select{height:38px;background:#160b0f;border:1px solid var(--line);color:var(--text);border-radius:6px;padding:0 10px}
 input[type=range]{accent-color:var(--blue);min-height:32px}
-.tabbar{display:flex;gap:8px;padding:8px;margin-bottom:14px;position:sticky;top:0;z-index:4;backdrop-filter:blur(12px)}
+.tabbar{display:flex;gap:8px;padding:8px;margin-bottom:14px;position:sticky;top:0;z-index:4;backdrop-filter:blur(12px);-webkit-overflow-scrolling:touch}
 .tab{border:1px solid transparent;background:transparent;color:var(--muted);border-radius:6px;padding:10px 13px;cursor:pointer;font-weight:800;flex:0 0 auto}
 .tab.active{background:#32131b;border-color:#77505a;color:#fff}
 .grid{display:grid;gap:14px}
 .metrics{grid-template-columns:repeat(6,1fr);margin-bottom:14px}
 .metric{padding:15px;min-height:126px}
 .metric small{color:var(--muted);font-weight:800;text-transform:uppercase;letter-spacing:.07em;font-size:11px}
-.metric strong{display:block;font-size:25px;margin-top:9px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.metric strong{display:block;font-size:25px;line-height:1.12;margin-top:9px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .delta{margin-top:9px;font-size:12px;color:var(--muted)}
 .delta.good{color:var(--green)}.delta.bad{color:var(--red)}.delta.warn{color:var(--amber)}
 .content{display:none}.content.active{display:block}
@@ -79,7 +79,7 @@ td.num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
   .tabbar{overflow:auto;margin-left:-10px;margin-right:-10px;border-radius:0;border-left:0;border-right:0}
   select{height:44px}.tab{min-height:44px}.chart,.chart-xl{height:370px}.chart-sm{height:320px}.score{grid-template-columns:1fr}.sliders{grid-template-columns:1fr}.identity-card{grid-template-columns:96px 1fr;grid-template-rows:auto;min-height:auto;align-items:center}.identity-media{min-height:96px;height:96px}.identity-copy strong{font-size:15px}
   .brand:after{width:120px;height:70px;right:8px;top:8px;opacity:.45}.lead{font-size:14px}.eyebrow{font-size:11px}
-  h1{font-size:30px;max-width:78%}.metric{min-height:106px}.metric strong{font-size:20px}.panel{overflow:auto}table{min-width:620px}#rankTable{min-width:420px}#inputsTable{min-width:560px}.signature{grid-template-columns:auto 1fr}.signature .seal{grid-column:1/-1}
+  h1{font-size:30px;max-width:78%}.metric{min-height:106px}.metric strong{font-size:20px;white-space:normal;overflow:visible;text-overflow:clip}.panel{overflow:auto}.insights{grid-template-columns:1fr}table{min-width:620px}#rankTable{min-width:420px}#inputsTable{min-width:560px}.signature{grid-template-columns:auto 1fr}.signature .seal{grid-column:1/-1}
   .mobile-summary{display:block;margin-bottom:14px}
 }
 @media(max-width:470px){
@@ -155,7 +155,7 @@ td.num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
   <section id="performance" class="content">
     <div class="grid cols-2">
       <div class="panel"><h2>Receita, CMV e despesas</h2><div id="chartPnl" class="chart"></div></div>
-      <div class="panel"><h2>Margens economicas</h2><div id="chartMargins" class="chart"></div></div>
+      <div class="panel"><h2>Margens econômicas</h2><div id="chartMargins" class="chart"></div></div>
     </div>
     <div class="grid cols-3" style="margin-top:14px">
       <div class="panel"><h2>Variação anual da receita</h2><div id="chartYoy" class="chart-sm"></div></div>
@@ -206,7 +206,7 @@ td.num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
     </div>
   </section>
 
-  <section class="signature" aria-label="Assinatura tecnica AFR">
+  <section class="signature" aria-label="Assinatura técnica AFR">
     <img src="afr-identidade.jpg" alt="" width="1080" height="1350" loading="lazy" decoding="async"/>
     <div><strong>AFR | Soluções técnicas para decisões estratégicas</strong><span>Identidade visual do escritório responsável pela análise pericial e base de valuation.</span></div>
     <div class="seal">Painel pericial executivo</div>
@@ -231,6 +231,10 @@ const colors={blue:"#4da3ff",green:"#30c48d",amber:"#f5b94f",red:"#ef6461",cyan:
 let rendered=false,activeTab="overview";
 
 function initControls(){
+  if(!window.Plotly){
+    document.body.insertAdjacentHTML("afterbegin","<div class='callout' style='margin:12px'>Não foi possível carregar a biblioteca de gráficos. Verifique a conexão e recarregue a página.</div>");
+    return;
+  }
   ["startYear","endYear"].forEach(id=>{qs("#"+id).innerHTML=years.map(y=>`<option value="${y}">${y}</option>`).join("");});
   qs("#startYear").value=2019; qs("#endYear").value=2023;
   qs("#mode").value="executivo"; qs("#scenario").value="base";
@@ -288,13 +292,16 @@ function renderScore(last,score){
 }
 function renderInsights(last,yoy,score){
   const mode=qs("#mode").value;
+  const growth=M.receita_yoy_pct[last];
+  const growthTitle=growth==null?"Base inicial":growth>=0?"Receita em expansão":"Receita em retração";
+  const growthText=growth==null?years[last]+" é o primeiro ano da série e não possui comparação anual.":years[last]+" registrou variação de "+pct(growth)+" na receita, com margem bruta de "+pct(M.margem_bruta[last])+".";
   const base=[
-    ["value","Escala acelerou",years[last]+" cresceu "+pct(M.receita_yoy_pct[last])+", com margem bruta de "+pct(M.margem_bruta[last])+"."],
+    ["value",growthTitle,growthText],
     ["risk","Margem estreita","Lucro líquido de "+brl2(D.lucro_liquido[last])+" representa apenas "+pct(M.margem_liquida[last])+" da receita."],
     ["cash","Caixa não acompanhou o lucro","Mesmo com lucro positivo, a variação de caixa em 2023 foi "+brl2(DFC.variacao_caixa)+"."],
     ["risk","Partes relacionadas materiais","O passivo não circulante com partes relacionadas chega a "+brl(D.partes_relacionadas_pnc[last])+" em "+years[last]+"."],
     ["value","Liquidez ainda operacional","A liquidez corrente encerra em "+num(M.liquidez_corrente[last])+", acima de 1, mas abaixo do pico histórico."],
-    ["cash","Fornecedor financia giro","Fornecedores CP subiram para "+brl(D.fornecedores_cp[last])+", reduzindo pressao imediata de caixa."]
+    ["cash","Fornecedor financia giro","Fornecedores CP somam "+brl(D.fornecedores_cp[last])+" no ano final selecionado, reduzindo a pressão imediata de caixa."]
   ];
   const filtered=mode==="risco"?base.filter(x=>x[0]==="risk"):mode==="valuation"?base.filter(x=>x[0]!=="cash"):base;
   qs("#insights").innerHTML=filtered.map(x=>`<article class="insight ${x[0]}"><b>${x[1]}</b><p>${x[2]}</p></article>`).join("");
@@ -348,7 +355,7 @@ function renderCapitalCharts(st){
     {x:ys,y:serie("liquidez_corrente",s,e),type:"scatter",mode:"lines+markers",name:"Liquidez corrente",line:{color:colors.cyan,width:4}},
     {x:ys,y:serie("liquidez_seca",s,e),type:"scatter",mode:"lines+markers",name:"Liquidez seca",line:{color:colors.blue,width:4}},
     {x:ys,y:serie("endividamento_total_pct",s,e),type:"bar",name:"Endividamento %",yaxis:"y2",marker:{color:colors.red}}
-  ],{...layout,yaxis:{title:"Indice",gridcolor:"#263348",automargin:true},yaxis2:{title:"%",overlaying:"y",side:"right",ticksuffix:"%",gridcolor:"rgba(0,0,0,0)",automargin:true}},config);
+  ],{...layout,yaxis:{title:"Índice",gridcolor:"#263348",automargin:true},yaxis2:{title:"%",overlaying:"y",side:"right",ticksuffix:"%",gridcolor:"rgba(0,0,0,0)",automargin:true}},config);
   Plotly.react("chartBalance",[
     {x:ys,y:serie("ativo_total",s,e),type:"bar",name:"Ativo total",marker:{color:colors.blue}},
     {x:ys,y:serie("passivo_circulante",s,e),type:"bar",name:"Passivo CP",marker:{color:colors.red}},
